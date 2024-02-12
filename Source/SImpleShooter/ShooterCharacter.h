@@ -24,21 +24,18 @@ protected:
 public:	
 	UFUNCTION(BlueprintPure)
 	bool IsDead() const;
-
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
+	void Shoot();
 
 private:
 	void MoveForward(float AxisValue);
 	void MoveRight(float AxisValue);
 	void LookUpRate(float AxisValue);
-	void LookRightRate(float AxisValue);
-	void Shoot();
+	void LookRightRate(float AxisValue);	
 
 	UPROPERTY(EditAnywhere)
 	float RotationRate = 10;
